@@ -1,35 +1,16 @@
 <table>
-        <tr>
-            <td class="myco">
-                <img src="<?php echo FCPATH . 'userfiles/company/' . $this->config->item('logo') ?>"
-                     style="max-width:260px;max-height:180px;">
-            </td>
-            <td>
-
-            </td>
-            <td class="myw">
-			<table class="top_sum">
-                 <tr>
-                       <td colspan="1" class="t_center"><h2 ><?php echo $this->lang->line('Invoice') ?></h2><br><br></td>
-                    </tr>
-			<tr>
-            <td><?php echo $this->lang->line('Invoice') ?></td><td><?php echo $this->config->item('prefix') . ' #' . $invoice['tid'] ?></td>
-			</tr>
-			<tr>
-            <td><?php echo $this->lang->line('Invoice Date') ?></td><td><?php echo dateformat($invoice['invoicedate']) ?></td>
-			</tr>
-			<tr>
-            <td><?php echo $this->lang->line('Due Date') ?></td><td><?php echo dateformat($invoice['invoiceduedate']) ?></td>
-			</tr>
-			<?php if($invoice['refer']) { ?>
-			<tr>
-            <td><?php echo $this->lang->line('Reference') ?></td><td><?php echo $invoice['refer'] ?></td>
-			</tr>
-			<?php } ?>
-			</table>
-
-
-
-            </td>
-        </tr>
-    </table><br>
+    <tr>
+        <td class="myco">
+            <img src="<?php echo FCPATH . 'userfiles/company/' . $this->config->item('logo') ?>" style="max-width:350px;max-height:260px;margin-left:40px">
+        </td>
+        <td class="mywn descr">
+            <h2 style="color: #283890;"><?php echo $this->config->item('ctitle'); ?></h2><br><br>
+            <p style="color: #283890;"><?php echo
+            $this->config->item('address') . ' ' . $this->config->item('city') . ', ' . $this->config->item('region') . '<br>' . $this->config->item('country') . ' -  ' . $this->config->item('postbox') . '<br><br>' . $this->lang->line('Phone') . ': ' . $this->config->item('phone') . '<br> ' . $this->lang->line('Email') . ': ' . $this->config->item('email');
+            if ($this->config->item('taxno')) echo '<br>' . $this->lang->line('Tax') . ' ID: ' . $this->config->item('taxno');
+            ?></p>
+        </td>
+        <td style="width: 250px;">
+        </td>
+    </tr>
+</table><br>
